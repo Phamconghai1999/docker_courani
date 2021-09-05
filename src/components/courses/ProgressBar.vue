@@ -2,16 +2,16 @@
   <div class="progress-bar">
     <ul>
       <li>
-        <p>ALL (5)</p>
+        <p>ALL ({{ coursesValue.all }})</p>
       </li>
       <li>
-        <p>TODO (3)</p>
+        <p>TODO ({{ coursesValue.todo }})</p>
       </li>
       <li>
-        <p>DOING (1)</p>
+        <p>DOING ({{ coursesValue.doing }})</p>
       </li>
       <li>
-        <p>DONE (1)</p>
+        <p>DONE ({{ coursesValue.done }})</p>
       </li>
     </ul>
   </div>
@@ -19,6 +19,17 @@
 <script>
 export default {
   name: "progress-bar",
+  props: {
+    coursesValue: {
+      Type: Object,
+      default: {
+        all: 0,
+        todo: 0,
+        doing: 0,
+        done: 0,
+      },
+    },
+  },
   data() {
     return {};
   },

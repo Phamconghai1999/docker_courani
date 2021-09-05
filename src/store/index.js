@@ -2,12 +2,12 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 //import module
-import todo from "./modules/todo";
+import courses from "./modules/courses";
 
 Vue.use(Vuex);
 const storeData = {
   modules: {
-    todo,
+    courses,
   },
 };
 const store = new Vuex.Store(storeData);
