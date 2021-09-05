@@ -1,65 +1,9 @@
-// import axios from "axios";
+import axios from "axios";
+import store from "../../store";
 
 const coursesModule = {
   state: {
-    courses: [
-      {
-        _id: "611b8649d08ba736344f8f5c",
-        title: "Hoc PHP fullstack",
-        description: "Khoa hoc PHP2",
-        url: "https://gg.com",
-        state: "TO DO",
-        user: {
-          _id: "611b8591d08ba736344f8f57",
-          username: "Pham Quang Thien",
-        },
-        createdAt: "2021-08-17T09:50:01.758Z",
-        updatedAt: "2021-08-17T09:50:01.758Z",
-        __v: 0,
-      },
-      {
-        _id: "61338ef0d26ad90004aa8484",
-        title: "Hoc VueJS ",
-        description: "Khoa hoc VueJS",
-        url: "https://vi.vuejs.org/",
-        state: "DOING",
-        user: {
-          _id: "611b8591d08ba736344f8f57",
-          username: "Pham Quang Thien",
-        },
-        createdAt: "2021-09-04T15:21:20.148Z",
-        updatedAt: "2021-09-04T15:21:20.148Z",
-        __v: 0,
-      },
-      {
-        _id: "61338f61d26ad90004aa848a",
-        title: "Hoc VueX ",
-        description: "Khoa hoc VueX",
-        url: "https://vi.vuejs.org/",
-        state: "DONE",
-        user: {
-          _id: "611b8591d08ba736344f8f57",
-          username: "Pham Quang Thien",
-        },
-        createdAt: "2021-09-04T15:23:13.096Z",
-        updatedAt: "2021-09-04T15:23:13.096Z",
-        __v: 0,
-      },
-      {
-        _id: "61338f61d26ad90004aa845a",
-        title: "Hoc VueRouter ",
-        description: "Khoa hoc VueRouter",
-        url: "https://vi.vuejs.org/",
-        state: "DOING",
-        user: {
-          _id: "611b8591d08ba736344f8f57",
-          username: "Pham Quang Thien",
-        },
-        createdAt: "2021-09-04T15:23:13.096Z",
-        updatedAt: "2021-09-04T15:23:13.096Z",
-        __v: 0,
-      },
-    ],
+    courses: [],
   },
   getters: {
     courses: (state) => state.courses,
@@ -74,8 +18,32 @@ const coursesModule = {
       return coursesValue;
     },
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    SET_COURSE: (state, data) => {
+      data.courses.map((course) => {
+        state.courses.unshift(course);
+      });
+      // console.log(store.getters["accessToken"]);
+    },
+  },
+  actions: {
+    async getCoursesApi({ commit }) {
+      try {
+        const response = await axios.get(
+          "https://coursani.herokuapp.com/api/course/",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + store.getters["accessToken"],
+            },
+          }
+        );
+        commit("SET_COURSE", response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 };
 
 export default coursesModule;

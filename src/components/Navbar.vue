@@ -25,15 +25,20 @@
             <a class="nav-link" href="#">Features</a>
           </li>
         </ul>
+        <button class="btn btn-secondary btn-sm" @click="logoutApi">
+          Logout
+        </button>
       </div>
     </nav>
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "navbar",
-  data() {
-    return {};
+  methods: {
+    ...mapActions(["logoutApi"]),
   },
 };
 </script>

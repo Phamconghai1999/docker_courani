@@ -9,7 +9,7 @@
 <script>
 import ProgressBar from "./ProgressBar.vue";
 import CourseItem from "./CourseItem.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "course-list",
@@ -17,11 +17,14 @@ export default {
     ProgressBar,
     CourseItem,
   },
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(["courses", "coursesValue"]),
+  },
+  methods: {
+    ...mapActions(["getCoursesApi"]),
+  },
+  created() {
+    this.getCoursesApi();
   },
 };
 </script>

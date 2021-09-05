@@ -3,7 +3,7 @@ POST https://coursani.herokuapp.com/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "Pham Quang Thien",
+    "username": "PhamHai",
     "password": "123456"
 }
 
@@ -12,7 +12,7 @@ POST https://coursani.herokuapp.com/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "Pham Quang Thien",
+    "username": "PhamHai",
     "password": "123456"
 }
 
@@ -22,24 +22,24 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
 {
-    "title": "Hoc VueX ",
-    "description": "Khoa hoc VueX",
-    "url": "https://vi.vuejs.org/"
+    "title": "Học nodeJS ",
+    "description": "Học NodeJS và Express",
+    "url": "https://expressjs.com/"
 }
 ######## get list course 
 GET https://coursani.herokuapp.com/api/course/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
-######## put 
-PUT http://localhost:5000/api/course/6119cde5a7682b1e4c2677ca
+######## put edit course
+PUT https://coursani.herokuapp.com/api/course/61346f709991ee0004bfa48e
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
 {
-    "title": "Hoc JS",
-    "description": "Khoa hoc JS",
-    "url": "https://fb.com",
+    "title": "Hoc NodeJS",
+    "description": "Học NodeJS và Express và nhiều thứ linh tinh",
+    "url": "https://expressjs.com/",
     "state": "DOING"
 }
 ######## put 

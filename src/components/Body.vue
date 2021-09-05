@@ -2,7 +2,7 @@
   <div class="container-fluid body-app">
     <div class="row">
       <div class="col">
-        <button class="btn btn-default btn-success">Create</button>
+        <button class="btn btn-default btn-success ">Create</button>
       </div>
       <div class="col-6">
         <CourseList />
@@ -15,6 +15,7 @@
 </template>
 <script>
 import CourseList from "./courses/CourseList.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "body-app",
@@ -23,6 +24,9 @@ export default {
   },
   components: {
     CourseList,
+  },
+  computes: {
+    ...mapGetters(["isAuthenticated"]),
   },
 };
 </script>
