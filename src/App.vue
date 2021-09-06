@@ -7,13 +7,14 @@
     <div v-else>
       <LogReg />
     </div>
-    <p>footer</p>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
 import Body from "./components/Body.vue";
+import Footer from "./components/Footer.vue";
 import LogReg from "./components/auth/LogReg.vue";
 import { mapGetters } from "vuex";
 
@@ -23,6 +24,7 @@ export default {
     Navbar,
     Body,
     LogReg,
+    Footer,
   },
   computed: {
     ...mapGetters(["isAuthenticated"]),
