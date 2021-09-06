@@ -19,11 +19,11 @@ Content-Type: application/json
 ######## post Create new course
 POST https://coursani.herokuapp.com/api/course/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTM0YzRmMGU4MGNhMzAwMDQ1ZDZhNTAiLCJpYXQiOjE2MzA4OTUyNDd9.Dp8YjlkWyK4MMF1uVBjJKk8Xpj4EEQu8a_9hZHkr6nY
 
 {
-    "title": "Học nodeJS ",
-    "description": "Học NodeJS và Express",
+    "title": "VueXXX ",
+    "description": "Học VueX trong 1 video duy nhat",
     "url": "https://expressjs.com/"
 }
 ######## get list course 
@@ -42,7 +42,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiO
     "url": "https://expressjs.com/",
     "state": "DOING"
 }
-######## put 
+######## delete
 DELETE http://localhost:5000/api/course/6119cdd1a7682b1e4c2677c6
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk

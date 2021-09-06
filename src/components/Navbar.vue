@@ -15,7 +15,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#"
               >Home <span class="sr-only">(current)</span></a
@@ -25,7 +25,14 @@
             <a class="nav-link" href="#">Features</a>
           </li>
         </ul>
-        <button class="btn btn-secondary btn-sm" @click="logoutApi">
+        <div class="user-name">
+          <p>{{ username }}</p>
+        </div>
+        <button
+          v-if="isAuthenticated"
+          class="btn btn-secondary btn-sm my-2 my-sm-0"
+          @click="logoutApi"
+        >
           Logout
         </button>
       </div>
@@ -33,13 +40,28 @@
   </div>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "navbar",
   methods: {
     ...mapActions(["logoutApi"]),
   },
+  computed: {
+    ...mapGetters(["isAuthenticated", "username"]),
+  },
 };
 </script>
-<style lang="css"></style>
+<style lang="css">
+.user-name {
+  text-align: center;
+}
+
+.user-name p {
+  margin: auto 15px;
+  padding: 0px;
+}
+.user-name p:hover {
+  cursor: pointer;
+}
+</style>
