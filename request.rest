@@ -3,8 +3,8 @@ POST https://coursani.herokuapp.com/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "PhamHai",
-    "password": "123456"
+    "username": "Tester",
+    "password": "abcabc"
 }
 
 ################################ Login

@@ -5,6 +5,9 @@
     <div v-if="openCourseEditor">
       <CourseEditModal />
     </div>
+    <div v-if="coursesValue.all == 0" class="no-course-title">
+      <p>No thing here. Create something . . .!</p>
+    </div>
     <div v-for="courseItem in courses" :key="courseItem._id">
       <CourseItem v-bind:courseItem="courseItem" />
     </div>
@@ -40,4 +43,9 @@ export default {
   },
 };
 </script>
-<style lang="css"></style>
+<style lang="css">
+.no-course-title {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+</style>

@@ -42,6 +42,7 @@ export default {
   position: relative;
   background: #b0ff7c33;
   min-width: 1050px;
+  min-height: 580px;
 }
 .blank {
   background: #f0f0f0;
