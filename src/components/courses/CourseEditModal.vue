@@ -100,19 +100,29 @@ export default {
 };
 </script>
 <style lang="css">
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .course-edit-modal {
   display: block;
-  z-index: 999;
+  z-index: 99;
   position: fixed;
   width: 450px;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(167, 255, 90, 0.742);
+  background: rgba(175, 238, 238, 0.863);
   border: 2px solid rgba(82, 34, 255, 0.856);
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
+  animation: fadein 0.3s;
 }
 .course-edit-modal .cem-header {
   display: flex;

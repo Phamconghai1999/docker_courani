@@ -44,6 +44,9 @@ export default {
 };
 </script>
 <style lang="css">
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+
 .no-course-title {
   margin-top: 10px;
   margin-left: 30px;

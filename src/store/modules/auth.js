@@ -39,7 +39,7 @@ const authModule = {
 
         // console.log(resData);
         if (resData.success) {
-          alert(resData.message);
+          // alert(resData.message);
           commit("AUTHENTICATE", resData);
         } else {
           alert(resData.message);

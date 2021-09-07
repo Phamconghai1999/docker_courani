@@ -31,7 +31,7 @@
       <div class="col-8 course-item-url">
         <p class="">
           Link:
-          <a :href="courseItem.url" target="_blank">{{ courseItem.url }}</a>
+          <a :href="courseItem.url" target="_blank">{{ courseItemShortUrl }}</a>
         </p>
       </div>
       <div class="col course-item-state">
@@ -52,6 +52,12 @@ export default {
     },
   },
   components: {},
+  computed: {
+    courseItemShortUrl() {
+      let shortUrl = this.courseItem.url.slice(0, 35) + "...";
+      return this.courseItem.url.length > 50 ? shortUrl : this.courseItem.url;
+    },
+  },
   methods: {
     ...mapActions(["showCourseEditor"]),
   },
@@ -71,7 +77,10 @@ export default {
   font-size: 16px;
   font-weight: bold;
 }
-
+.course-item-title {
+  position: relative;
+  display: block;
+}
 .course-item-state p {
   font-family: sans-serif;
   font-weight: bold;
@@ -79,6 +88,9 @@ export default {
   color: #ec4f11cb;
 }
 
+.course-item-url a {
+  color: rgb(0, 119, 255);
+}
 .course-item-del button {
   color: rgba(255, 24, 24, 0.975);
   margin-left: 10px;
