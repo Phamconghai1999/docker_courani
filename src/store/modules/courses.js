@@ -34,7 +34,7 @@ const coursesModule = {
       // console.log(store.getters["accessToken"]);
     },
     CLEAR_COURSE: (state) => {
-      state.courses = [];
+      state.courses.length = 0;
     },
     SHOW_NEW_COURSE: (state, data) => {
       state.courses.unshift(data);
@@ -58,6 +58,12 @@ const coursesModule = {
         (course) => course._id == updatedCourse._id
       );
       Vue.set(state.courses, courseIndex, updatedCourse);
+    },
+    DELETE_COURSES: (state, deletedCourse) => {
+      var courseIndex = state.courses.findIndex(
+        (course) => course._id == deletedCourse._id
+      );
+      state.courses.splice(courseIndex, 1);
     },
   },
   actions: {
@@ -106,6 +112,11 @@ const coursesModule = {
         // handle response .data
         if (response.data.success) {
           commit("SHOW_NEW_COURSE", response.data.course);
+          let noti = {
+            title: "Successful",
+            message: "Course has been successfully created",
+          };
+          this.dispatch("showNotification", noti, { root: true });
         }
       } catch (error) {
         console.log(error.message);
@@ -133,6 +144,33 @@ const coursesModule = {
           // commit("DEBUG", response.data.course);
           // update state.courses and reRender
           commit("UPDATE_COURSES", response.data.course);
+          let noti = {
+            title: "Successful",
+            message: "Course has been successfully updated",
+          };
+          this.dispatch("showNotification", noti, { root: true });
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    },
+    async deleteCourseApi({ commit }, courseId) {
+      try {
+        const response = await axios({
+          method: "delete",
+          url: "https://coursani.herokuapp.com/api/course/" + courseId,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + store.getters["accessToken"],
+          },
+        });
+        if (response.data.success) {
+          commit("DELETE_COURSES", response.data.course);
+          let noti = {
+            title: "Successful",
+            message: "Course has been successfully deleted",
+          };
+          this.dispatch("showNotification", noti, { root: true });
         }
       } catch (error) {
         console.log(error.message);

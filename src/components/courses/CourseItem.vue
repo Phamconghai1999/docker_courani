@@ -22,7 +22,10 @@
         </p>
       </div>
       <div class="col-2 course-item-del">
-        <button class="btn btn-sm btn-light">
+        <button
+          class="btn btn-sm btn-light"
+          @click="deleteCourseApi(courseItem._id)"
+        >
           <i class="far fa-trash-alt"></i>
         </button>
       </div>
@@ -59,7 +62,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["showCourseEditor"]),
+    ...mapActions(["showCourseEditor", "deleteCourseApi"]),
   },
 };
 </script>

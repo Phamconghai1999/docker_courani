@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar />
+    <Notification />
     <div v-if="isAuthenticated">
       <Body />
     </div>
@@ -16,6 +17,7 @@ import Navbar from "./components/Navbar.vue";
 import Body from "./components/Body.vue";
 import Footer from "./components/Footer.vue";
 import LogReg from "./components/auth/LogReg.vue";
+import Notification from "./components/Notification.vue";
 import { mapGetters } from "vuex";
 
 export default {
@@ -25,6 +27,7 @@ export default {
     Body,
     LogReg,
     Footer,
+    Notification,
   },
   computed: {
     ...mapGetters(["isAuthenticated"]),

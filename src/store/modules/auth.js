@@ -40,6 +40,11 @@ const authModule = {
         // console.log(resData);
         if (resData.success) {
           // alert(resData.message);
+          let noti = {
+            title: "Login Successful",
+            message: "Have a good day",
+          };
+          this.dispatch("showNotification", noti, { root: true }); // call actions from another module
           commit("AUTHENTICATE", resData);
         } else {
           alert(resData.message);
@@ -51,6 +56,11 @@ const authModule = {
     async logoutApi({ commit }) {
       try {
         commit("CLEAR_SESSION");
+        let noti = {
+          title: "Signed out",
+          message: "See you again",
+        };
+        this.dispatch("showNotification", noti, { root: true });
       } catch (error) {
         console.log(error);
       }

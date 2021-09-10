@@ -43,6 +43,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiO
     "state": "DOING"
 }
 ######## delete
-DELETE http://localhost:5000/api/course/6119cdd1a7682b1e4c2677c6
+DELETE https://coursani.herokuapp.com/api/course/611b8649d08ba736344f8f5xx
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk

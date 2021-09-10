@@ -22,7 +22,7 @@
 </template>
 <script>
 import CourseList from "./courses/CourseList.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "body-app",
@@ -34,6 +34,15 @@ export default {
   },
   computes: {
     ...mapGetters(["isAuthenticated"]),
+  },
+  methods: {
+    ...mapActions(["showNotification"]),
+    showNoti() {
+      this.showNotification({
+        title: "Hello",
+        message: "Bla bla",
+      });
+    },
   },
 };
 </script>
