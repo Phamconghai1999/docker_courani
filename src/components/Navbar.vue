@@ -30,7 +30,7 @@
           <button
             v-if="isAuthenticated"
             class="btn btn-secondary btn-sm my-2 my-sm-0 m-2"
-            @click="logoutApi"
+            @click="logout"
           >
             Logout
           </button>
@@ -46,6 +46,11 @@ export default {
   name: "navbar",
   methods: {
     ...mapActions(["logoutApi"]),
+    logout() {
+      this.logoutApi();
+      var navbarNav = document.getElementById("navbarNav"); // collapse navbar
+      navbarNav.classList.remove("show");
+    },
   },
   computed: {
     ...mapGetters(["isAuthenticated", "username"]),
