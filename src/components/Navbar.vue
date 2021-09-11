@@ -1,6 +1,6 @@
 <template lang="">
   <div class="">
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <i class="fas fa-laptop-code mr-2 mb-1"></i>
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -27,14 +27,14 @@
         </ul>
         <div class="user-name">
           <p>{{ username }}</p>
+          <button
+            v-if="isAuthenticated"
+            class="btn btn-secondary btn-sm my-2 my-sm-0 m-2"
+            @click="logoutApi"
+          >
+            Logout
+          </button>
         </div>
-        <button
-          v-if="isAuthenticated"
-          class="btn btn-secondary btn-sm my-2 my-sm-0"
-          @click="logoutApi"
-        >
-          Logout
-        </button>
       </div>
     </nav>
   </div>
@@ -53,15 +53,33 @@ export default {
 };
 </script>
 <style lang="css">
-.user-name {
-  text-align: center;
-}
+@media only screen and (min-width: 560px) {
+  .user-name {
+    display: flex;
+    text-align: center;
+  }
 
-.user-name p {
-  margin: auto 15px;
-  padding: 0px;
+  .user-name p {
+    margin: auto 15px;
+    padding: 0px;
+    font-weight: bold;
+  }
+  .user-name p:hover {
+    cursor: pointer;
+  }
 }
-.user-name p:hover {
-  cursor: pointer;
+@media only screen and (max-width: 559px) {
+  .user-name {
+    text-align: center;
+  }
+
+  .user-name p {
+    margin: auto 15px;
+    padding: 0px;
+    font-weight: bold;
+  }
+  .user-name p:hover {
+    cursor: pointer;
+  }
 }
 </style>

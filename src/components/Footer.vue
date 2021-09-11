@@ -8,7 +8,7 @@
         <div class="row row-30">
           <div class="col-md-4 col-xl-5">
             <div class="pr-xl-4 mt-2">
-              <a class="brand" href="index.html"
+              <a class="brand" href="#"
                 ><img
                   class="brand-logo-light"
                   src="https://s.gravatar.com/avatar/057640eed356995cca728684158b3ccd?s=140"

@@ -53,6 +53,37 @@ const authModule = {
         console.log(error.message);
       }
     },
+    async registerApi(context, formData) {
+      try {
+        const response = await axios.post(
+          "https://coursani.herokuapp.com/api/auth/register",
+          {
+            username: formData.username,
+            password: formData.password,
+          }
+        );
+        var resData = response.data;
+
+        console.log(resData);
+        if (resData.success) {
+          // alert(resData.message);
+          let noti = {
+            title: "Register Successful",
+            message: "Login and enjoy !",
+          };
+          this.dispatch("showNotification", noti, { root: true }); // call actions from another module
+          // commit("AUTHENTICATE", resData);
+        } else {
+          let noti = {
+            title: "Register Report !",
+            message: resData.message,
+          };
+          this.dispatch("showNotification", noti, { root: true });
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    },
     async logoutApi({ commit }) {
       try {
         commit("CLEAR_SESSION");

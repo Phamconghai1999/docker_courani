@@ -36,28 +36,58 @@ export default {
 };
 </script>
 <style lang="css">
-.progress-bar {
-  background: #a3ffc2;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  border-radius: 3px;
-  padding: 0px;
-  margin: 0px;
+@media only screen and (min-width: 740px) {
+  .progress-bar {
+    background: #a3ffc2;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+  }
+  .progress-bar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+  }
+  .progress-bar ul li {
+    margin: 0px 25px;
+    padding: 10px;
+  }
+  .progress-bar ul li p {
+    margin: 0px;
+    padding: 0px;
+  }
 }
-.progress-bar ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-}
-.progress-bar ul li {
-  margin: 0px 25px;
-  padding: 10px;
-}
-.progress-bar ul li p {
-  margin: 0px;
-  padding: 0px;
+@media only screen and (max-width: 739px) {
+  .progress-bar {
+    background: #a3ffc2;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+  }
+  .progress-bar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+  }
+  .progress-bar ul li {
+    margin: 0px 2px;
+    padding: 4px;
+  }
+  .progress-bar ul li p {
+    margin: 0px;
+    padding: 0px;
+  }
 }
 </style>
