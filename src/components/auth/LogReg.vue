@@ -53,10 +53,22 @@ export default {
     login() {
       var loader = document.getElementById("loader");
       loader.style.display = "block";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 3000);
+      var navbarNav = document.getElementById("navbarNav"); // collapse navbar
+      navbarNav.classList.remove("show");
       this.loginApi({ username: this.username, password: this.password });
     },
     register() {
       this.registerApi({ username: this.username, password: this.password });
+      var loader = document.getElementById("loader");
+      var navbarNav = document.getElementById("navbarNav"); // collapse navbar
+      navbarNav.classList.remove("show");
+      loader.style.display = "block";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 3000);
     },
   },
 };
