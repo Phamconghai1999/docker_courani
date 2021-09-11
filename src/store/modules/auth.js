@@ -47,7 +47,11 @@ const authModule = {
           this.dispatch("showNotification", noti, { root: true }); // call actions from another module
           commit("AUTHENTICATE", resData);
         } else {
-          alert(resData.message);
+          let noti = {
+            title: "Register Report !",
+            message: resData.message,
+          };
+          this.dispatch("showNotification", noti, { root: true });
         }
       } catch (error) {
         console.log(error.message);
