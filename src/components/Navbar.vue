@@ -2,7 +2,7 @@
   <div class="">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <i class="fas fa-laptop-code mr-2 mb-1"></i>
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Courani</a>
       <button
         class="navbar-toggler"
         type="button"

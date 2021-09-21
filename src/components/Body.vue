@@ -72,7 +72,9 @@ export default {
     align-items: center;
   }
   .col-create-course button {
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     display: block;
     left: 10px;
     font-size: 8px;
