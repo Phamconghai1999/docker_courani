@@ -1,0 +1,9 @@
+version: "3"
+services:
+  courani-image:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: courani
+    ports:
+      - "8080:8080"

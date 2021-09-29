@@ -1,0 +1,3 @@
+docker-compose up -d    // -- build with did not already exist
+docker-compose build     // -- rebuid
+docker-compose down     // -- remove none-image
